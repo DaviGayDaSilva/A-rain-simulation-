@@ -1,0 +1,14 @@
+name: Detecta mudanças
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Aviso de mudança
+        run: echo "Arquivo mudou! Vai rodar deploy depois 😎"
