@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0b0f1a;
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* chuva */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image: 
+    linear-gradient(transparent 0%, transparent 50%, rgba(255,255,255,0.2) 50%, transparent 100%);
+
+  background-size: 2px 20px;
+  animation: rain 0.3s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0 -100px;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
