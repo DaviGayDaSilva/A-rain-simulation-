@@ -1,32 +1,35 @@
 body {
   margin: 0;
   height: 100vh;
-  background: #0b0f1a;
   overflow: hidden;
-
+  background: #0b0f1a;
   position: relative;
+  color: white;
 }
 
 /* chuva */
 body::before {
   content: "";
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
   pointer-events: none;
 
-  background-image: 
-    linear-gradient(transparent 0%, transparent 50%, rgba(255,255,255,0.2) 50%, transparent 100%);
+  background-image: url("https://i.imgur.com/3i1xg5v.png");
+  background-size: 300px;
 
-  background-size: 2px 20px;
   animation: rain 0.3s linear infinite;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 @keyframes rain {
-  0% {
-    background-position: 0 -100px;
+  from {
+    transform: translateY(-100px);
   }
-  100% {
-    background-position: 0 100px;
+  to {
+    transform: translateY(100px);
   }
 }
